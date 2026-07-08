@@ -1,0 +1,7 @@
+C:/Users/diego/OneDrive/Escritorio/Ejercicios c++/Final 1/final1/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/final1.dir
+C:/Users/diego/OneDrive/Escritorio/Ejercicios c++/Final 1/final1/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/diego/OneDrive/Escritorio/Ejercicios c++/Final 1/final1/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/diego/OneDrive/Escritorio/Ejercicios c++/Final 1/final1/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+C:/Users/diego/OneDrive/Escritorio/Ejercicios c++/Final 1/final1/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+C:/Users/diego/OneDrive/Escritorio/Ejercicios c++/Final 1/final1/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+C:/Users/diego/OneDrive/Escritorio/Ejercicios c++/Final 1/final1/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir

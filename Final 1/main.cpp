@@ -15,7 +15,10 @@ private:
     string nombre;
 
 public:
-
+    int cantidad_dependencias()
+    {
+        return paquetes.size();
+    }
     paquete(int version, const char* codigo, const char* nombre)
     {
         this->version = version;
@@ -111,31 +114,23 @@ public:
 
 
 
-    vector<pair<string,int>> obtener_dependencias()
+    vector<paquete*> obtener_dependencias()
     {
-        vector<pair<string,int>> resultado;
-        for(auto p : paquetes)
-        {
-            resultado.push_back(
-                {
-                    p->get_codigo(),
-                    (int)p->get_dependencias().size()
-                }
-                );
-        }
         sort(
-            resultado.begin(),
-            resultado.end(),
-            [](pair<string,int> a, pair<string,int> b)
+            paquetes.begin(),
+            paquetes.end(),
+            [](paquete* p1, paquete* p2)
             {
-                return a.second > b.second;
+                return p1->cantidad_dependencias() > p2->cantidad_dependencias();
             }
             );
-        return resultado;
+
+        return paquetes;
     }
-    vector<pair<string,int>> cinco_mayores_dependencias()
+
+    vector<paquete*> cinco_mayores_dependencias()
     {
-        vector<pair<string,int>> resultado = obtener_dependencias();
+        auto resultado = obtener_dependencias();
         if(resultado.size() > 5)
         {
             resultado.resize(5);
@@ -148,18 +143,13 @@ public:
     {
         auto resultado = obtener_dependencias();
 
-        cout << "Sin dependencias ////" << endl;
+        cout << "Sin dependencias:\n";
 
-
-        for_each(
-            resultado.begin(),
-            resultado.end(),
-            [](auto p)
-            {
-                if(p.second == 0)
-                    cout << p.first << endl;
-            }
-            );
+        for(auto p : resultado)
+        {
+            if(p->cantidad_dependencias() == 0)
+                cout << p->get_nombre() << endl;
+        }
     }
 };
 
@@ -297,19 +287,13 @@ int main()
     auto resultado1 = g1.obtener_dependencias();
     for(auto dato : resultado1)
     {
-        cout << dato.first
-             << " -> "
-             << dato.second
-             << endl;
+        cout<< dato->get_codigo() << "-> "<< dato->cantidad_dependencias() <<endl;
     }
     cout << "\n\n5 paquetes con mayor cantidad de dependencias:\n";
     auto mayores = g1.cinco_mayores_dependencias();
     for(auto dato : mayores)
     {
-        cout << dato.first
-             << " -> "
-             << dato.second
-             << endl;
+       cout<< dato->get_codigo() << "-> "<< dato->cantidad_dependencias() <<endl;
     }
     cout << "\n\nPaquetes sin dependencias:\n";
     g1.sin_dependencias();
