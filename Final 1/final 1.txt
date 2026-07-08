@@ -1,0 +1,50 @@
+Sofware que mantenga las dependencias de paquetes de software
+ Una empresa lo contrata para diseñar un sofware que mantenga las dependencias de paquetes de software. Un paquete de software o librería puede tener dependencias de otros paquetes para funcionar por ejemplo el paquete scala, necesita el paquete jdk para funcionar. La empresa guarda la información de los paquetes y dependencias en los siguientes archivos : 
+
+
+paquetes.dat              dependencias.dat
+
+codigo : char[100]          codigoPaquete: char[100]
+
+nombre : char[100]          codigoPaqueteDependencia:char[100]
+
+version: int 
+
+
+
+Note que un paquete puede depender de varios paquetes y a la vez un paquete puede ser utilizado por varios paquetes dependientes, es una relación muchos a muchos. Por ejemplo scala depende de openjdk y kotlin depende también de openjdk pero también depende del “idea”. También existen dependencias transitivas, por ejemplo el paquete intellij depende de kotlin y por ende tiene una dependencia transitiva con openjdk. 
+
+
+(22) Realice el diseño de clases e implemente la función que permita saber todas las dependencias de un paquete (incluyendo las transitivas), dado el código del paquete.
+
+(22) Escriba un archivo de texto que permita saber el árbol de dependencias de un paquete determinado. Para realizar esto sobreescriba el operador <<. El archivo debe llamarse igual que el código del paquete pasado por parámetro y debe tener el siguiente formato: 
+
+nombre paquete
+
+dependencia 1
+
+dependencia 2
+
+dependencia de 2  
+
+
+(18) Realice procedimiento con funciones STL que permita saber: 
+
+Los 5 paquetes con mayor cantidad de dependencias no transitivas.
+
+Todos los paquetes que no tienen dependencias. 
+
+(22) (no utilice STL) Programe una estructura template que represente un vector dinámico ordenado. Dicha estructura debe permitir:
+
+agregar un elemento. 
+
+eliminar un elemento por índice.
+
+imprimir todos los elementos de forma ordenada
+
+Conteste: ¿Que operador debería sobreescribir al tipo T para poder utilizar esta estructura?
+
+(16) Conteste: ¿Cuando es necesario utilizar composición y como este ayuda a reutilizar código? El polimorfismo simplifica el diseño del código, como? justifique.
+
+
+Libre : La empresa lo vuelve a contratar para el diseño de una nueva entidad que es el conjunto de paquetes. Dicha entidad debe permitir instalar todos los paquetes dependientes de dicho conjunto, este tiene un codigo, nombre y versión. Diseñe la solución y modifique los archivos.  
