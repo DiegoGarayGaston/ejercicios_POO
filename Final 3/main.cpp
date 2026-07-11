@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -55,6 +57,23 @@ public:
         v1(v),
         c1(c)
     {
+    }
+};
+
+class agencia
+{
+private:
+    vector <viaje*>viajes;
+public:
+    void agregar_viaje(viaje *v1)
+    {
+        viajes.push_back(v1);
+    }
+    void viajes_mas_baratos(){
+        sort(viajes.begin(),viajes.end(),[]( viaje& a,  viaje& b)
+             {
+            return a.get_precio()>b.get_precio();
+             });
     }
 };
 
