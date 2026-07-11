@@ -69,12 +69,38 @@ public:
     {
         viajes.push_back(v1);
     }
-    void viajes_mas_baratos(){
+    vector <viaje*> viajes_mas_baratos(){
         sort(viajes.begin(),viajes.end(),[]( viaje& a,  viaje& b)
              {
             return a.get_precio()>b.get_precio();
              });
+        vector <viaje*>baratos;
+        for (size_t i=0;i<5 && i<viajes.size();i++)
+        {
+            baratos.push_back(viajes[i]);
+        }
+        return baratos;
     }
+     viaje* viaje_mas_largo(){
+         sort(viajes.begin(),viajes.end(),[]( viaje* a,  viaje* b)
+              {
+                  return a->get_horas()>b->get_horas();
+              });
+        return viajes[0];
+    }
+     vector<viaje*> viajes_menor_tiempo(int max_horas)
+     {
+         vector<viaje*> resultado;
+
+         copy_if(viajes.begin(), viajes.end(),
+                 back_inserter(resultado),
+                 [max_horas](viaje* v)
+                 {
+                     return v->get_horas() < max_horas;
+                 });
+
+         return resultado;
+     }
 };
 
 int main()
