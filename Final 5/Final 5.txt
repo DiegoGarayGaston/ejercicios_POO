@@ -1,0 +1,28 @@
+Sistema para manejar las autorizaciones de la empresa
+La empresa Sugsys lo contrata para diseñar un sistema para manejar las autorizaciones de su empresa. La idea es que el sistema indique si un usuario tiene permiso para acceder a una funcionalidad determinada.
+
+La empresa tiene usuarios que tienen un nombre (char de 200) y un código numérico. Además cuentan con cargos, un cargo tiene un nombre y los permisos para las funcionalidades. Por ejemplo el cargo de ventas, tiene permiso “ver stock” y “realizar venta”.
+
+
+Los permisos son solo palabras que representan una funcionalidad. Por ejemplo “realizar compra” permite realizar una compra.
+
+(30) Realice un diseño que permita guardar las entidades en uno ó varios archivos binarios.
+
+(20) Realice una función que permita con el código de usuario y el permiso, saber si el usuario tiene el permiso determinado.
+
+(30) Utilizando STL realice:
+
+una función que indique cual es o son los cargos que tienen más permisos.
+
+una función que indique los permisos que se encuentran en varios cargos.
+
+una función que indique cual es o son los usuarios que tienen más permisos.
+
+(20) Explique:
+
+¿Por qué son necesarias las clases template en los lenguajes de tipado estático?
+
+¿Por qué C++ utiliza punteros para implementar el polimorfismo?
+
+Libre: La empresa lo vuelve a contratar dado que desea implementar cargos que extienden de cargos y tienen los permisos del cargo que extienden y pueden agregar más permisos. Por ejemplo el cargo “Jefe de ventas” extiende de “vendedor” y tiene los mismos permisos que “vendedor” y agrega “auditar venta” .
+Diseñe la solución en objetos, realice la función que permita obtener los permisos e indique qué cambiaría en los archivos.
